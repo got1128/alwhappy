@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b2032" />
+    <meta name="description" content="Always Happy 會員審核後台。" />
+    <meta name="robots" content="noindex" />
+    <title>會員審核後台｜Always Happy</title>
+    <link rel="stylesheet" href="../assets/site.css" />
+    <link rel="icon" type="image/png" href="../assets/always-happy-logo.png" />
+  </head>
+  <body>
+    <a class="skip" href="#main">跳到主要內容</a>
+    <div class="topbar">
+      <div class="container"><span>ALWAYS HAPPY / 航空職涯入口</span><span>EXPLORE YOUR NEXT FLIGHT</span></div>
+    </div>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="../index.html" aria-label="Always Happy，回到首頁"
+          ><img class="brand-logo" src="../assets/always-happy-logo.png" alt="" /><span
+            >Always Happy<small>機師招募與航空職涯</small></span
+          ></a
+        >
+        <nav class="desktop-nav" aria-label="主要導覽">
+          <a href="../pilot-jobs/index.html">機師職缺</a><a href="../for-pilots/index.html">我是機師</a
+          ><a href="../become-a-pilot/index.html">想成為機師</a><a href="../for-airlines/index.html">航空公司合作</a
+          ><a href="../insights/index.html">知識中心</a><a href="../about/index.html">關於我們</a
+          ><a href="../contact/index.html">聯絡我們</a>
+        </nav>
+        <div class="member-actions" data-member-actions>
+          <a class="member-button" href="../member/index.html" data-member-link>登入</a>
+          <button class="member-logout" type="button" data-member-logout hidden>登出</button>
+        </div>
+        <button
+          class="mobile-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="mobile-nav"
+          aria-label="開啟選單"
+        >
+          ☰ 選單
+        </button>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="手機導覽">
+        <a href="../pilot-jobs/index.html">機師職缺</a><a href="../for-pilots/index.html">我是機師</a
+        ><a href="../become-a-pilot/index.html">想成為機師</a><a href="../for-airlines/index.html">航空公司合作</a
+        ><a href="../insights/index.html">知識中心</a><a href="../about/index.html">關於我們</a
+        ><a href="../contact/index.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="subhero">
+        <div class="subhero-layout">
+          <div class="subhero-copy">
+            <span class="eyebrow light">ADMIN</span>
+            <h1>會員審核後台</h1>
+            <p>審核機師送出的資料，決定是否成為 Always Happy 會員。</p>
+          </div>
+          <div class="subhero-media"><img src="../assets/airline-recruitment.png" alt="審核後台的主題形象照片" /></div>
+        </div>
+      </section>
+      <section class="submain">
+        <div class="container">
+          <section class="pilot-profile" id="admin-login" aria-labelledby="admin-login-title">
+            <div class="profile-heading">
+              <span class="eyebrow">REVIEWER SIGN IN</span>
+              <h2 id="admin-login-title">審核員登入</h2>
+              <p>請使用 Always Happy 提供的審核員帳號登入。</p>
+            </div>
+            <form class="profile-form">
+              <fieldset>
+                <legend>登入資料</legend>
+                <div class="profile-grid">
+                  <label>
+                    Email
+                    <input name="email" type="email" autocomplete="email" required />
+                  </label>
+                  <label>
+                    密碼
+                    <input name="password" type="password" autocomplete="current-password" required />
+                  </label>
+                </div>
+              </fieldset>
+              <div class="profile-actions">
+                <button class="button pilot-form-submit__button" type="submit">登入 <span aria-hidden="true">↗</span></button>
+                <p class="profile-status" aria-live="polite"></p>
+              </div>
+            </form>
+          </section>
+
+          <section class="admin-panel" id="admin-panel" aria-labelledby="admin-title" hidden>
+            <div class="admin-toolbar">
+              <div>
+                <span class="eyebrow" id="admin-user"></span>
+                <h2 id="admin-title">會員審核</h2>
+              </div>
+              <button class="add-airline-row" type="button" id="admin-logout">登出</button>
+            </div>
+            <div class="admin-filters" id="admin-filters" role="group" aria-label="依審核狀態篩選">
+              <button type="button" data-filter="pending" aria-pressed="true">待審核 <span data-count="pending">0</span></button>
+              <button type="button" data-filter="approved" aria-pressed="false">已通過 <span data-count="approved">0</span></button>
+              <button type="button" data-filter="rejected" aria-pressed="false">未通過 <span data-count="rejected">0</span></button>
+              <button type="button" data-filter="all" aria-pressed="false">全部 <span data-count="all">0</span></button>
+            </div>
+            <p class="admin-message" id="admin-message" aria-live="polite"></p>
+            <div class="admin-list" id="admin-list"></div>
+          </section>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <img class="footer-logo" src="../assets/always-happy-logo.png" alt="Always Happy" />
+            <p>以飛行安全為優先，連結航空公司與飛行人才的下一段航程。</p>
+          </div>
+          <div class="footer-links">
+            <strong>機師</strong><a href="../pilot-jobs/index.html">機師職缺</a
+            ><a href="../for-pilots/index.html">我是機師</a><a href="../become-a-pilot/index.html">想成為機師</a>
+          </div>
+          <div class="footer-links">
+            <strong>合作</strong><a href="../for-airlines/index.html">航空公司合作</a
+            ><a href="../insights/index.html">知識中心</a>
+          </div>
+          <div class="footer-links">
+            <strong>平台</strong><a href="../about/index.html">關於我們</a><a href="../contact/index.html">聯絡我們</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>Always Happy Co., Ltd. · 塞席爾共和國國際商業公司 No. 159555</span
+          ><span>聯絡地址：桃園市桃園區新埔六街 95 號 16 樓</span
+          ><span>李國虎 · <a href="tel:+886917215888">+886 917 215 888</a></span
+          ><span>© 2026 Always Happy Co., Ltd.</span>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/site.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js" defer></script>
+    <script src="../assets/supabase-config.js" defer></script>
+    <script src="../assets/auth-nav.js" defer></script>
+    <script src="../assets/profile-view.js" defer></script>
+    <script src="../assets/admin.js" defer></script>
+  </body>
+  <script>
+    "undefined" === typeof _trfq || (window._trfq = []);
+    "undefined" === typeof _trfd && (window._trfd = []),
+      _trfd.push(
+        { "tccl.baseHost": "secureserver.net" },
+        { ap: "cpsh-oh" },
+        { server: "sg2plzcpnl507314" },
+        { dcenter: "sg2" },
+        { cp_id: "11050728" },
+        { cp_cl: "8" },
+      ); // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.
+  </script>
+  <script src="https://img1.wsimg.com/traffic-assets/js/tccl.min.js"></script>
+</html>
